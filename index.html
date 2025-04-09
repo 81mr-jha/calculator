@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator with History</title>
+    <script src="https://kit.fontawesome.com/1fc8bd02e0.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="calculator">
+        <button id="hamburger" onclick="toggleHistory()">&#9776; Standard</button>
+        <div class="header">
+            <input type="text" id="display" value="0" disabled>
+        </div>
+        <div class="main-content">
+            <div class="buttons">
+                <button onclick="clearDisplay()">C</button>
+                <button onclick="clearEntry()">CE</button>
+                <button onclick="appendToDisplay('/')">/</button>
+                <button onclick="appendToDisplay('*')">*</button>
+                <button onclick="appendToDisplay('7')">7</button>
+                <button onclick="appendToDisplay('8')">8</button>
+                <button onclick="appendToDisplay('9')">9</button>
+                <button onclick="appendToDisplay('-')">-</button>
+                <button onclick="appendToDisplay('4')">4</button>
+                <button onclick="appendToDisplay('5')">5</button>
+                <button onclick="appendToDisplay('6')">6</button>
+                <button onclick="appendToDisplay('+')">+</button>
+                <button onclick="appendToDisplay('1')">1</button>
+                <button onclick="appendToDisplay('2')">2</button>
+                <button onclick="appendToDisplay('3')">3</button>
+                <button style="background-color: rgb(31, 159, 31); color: white;" onclick="calculateResult()">=</button>
+                <button onclick="appendToDisplay('0')">0</button>
+                <button onclick="appendToDisplay('.')">.</button>
+            </div>
+
+        </div>
+        <div class="history" id="historyPanel">
+            <div class="history-header">
+                <h3>History</h3>
+                <button id="clearHistory" onclick="clearHistory()">
+                   <i class="fa-solid fa-trash"></i>
+                </button>
+                <button id="closeHistory" onclick="toggleHistory()">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <ul id="historyList"></ul>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
